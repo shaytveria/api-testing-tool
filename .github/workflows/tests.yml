@@ -26,9 +26,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+      timeout-minutes: 5
 
     - name: Run tests
       run: npm test
+      timeout-minutes: 10
 
     - name: Upload test reports
       uses: actions/upload-artifact@v3
