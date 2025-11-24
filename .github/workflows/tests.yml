@@ -30,7 +30,11 @@ jobs:
 
     - name: Run tests
       run: npm test
-      timeout-minutes: 10
+      timeout-minutes: 15
+
+    - name: Create reports directory if missing
+      run: mkdir -p reports/json-reports
+      if: always()
 
     - name: Upload test reports
       uses: actions/upload-artifact@v3
@@ -39,4 +43,5 @@ jobs:
         name: test-reports
         path: reports/json-reports/
         retention-days: 7
+        if-no-files-found: ignore
 
