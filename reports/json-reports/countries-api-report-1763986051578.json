@@ -1,0 +1,162 @@
+{
+  "summary": {
+    "totalTests": 6,
+    "passedTests": 6,
+    "failedTests": 0,
+    "passRate": 100,
+    "averageResponseTime": 576,
+    "generatedAt": "2025-11-24T12:07:31.578Z"
+  },
+  "tests": [
+    {
+      "name": "Get All Countries",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/all?fields=name,cca2,cca3,population,capital,region,subregion,area,currencies,languages",
+      "method": "GET",
+      "statusCode": 200,
+      "responseTime": 2164,
+      "assertions": [
+        {
+          "name": "Status Code",
+          "passed": true,
+          "expected": 200,
+          "actual": 200
+        },
+        {
+          "name": "Performance",
+          "passed": false,
+          "expected": "<= 2000ms",
+          "actual": "2164ms",
+          "error": "Response time too slow: 2164ms"
+        },
+        {
+          "name": "Custom Validation",
+          "passed": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Country by Name (Israel)",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/name/israel",
+      "method": "GET",
+      "statusCode": 200,
+      "responseTime": 151,
+      "assertions": [
+        {
+          "name": "Status Code",
+          "passed": true,
+          "expected": 200,
+          "actual": 200
+        },
+        {
+          "name": "Performance",
+          "passed": true,
+          "expected": "<= 2000ms",
+          "actual": "151ms"
+        },
+        {
+          "name": "Custom Validation",
+          "passed": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Country by Code (IL)",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/alpha/il",
+      "method": "GET",
+      "statusCode": 200,
+      "responseTime": 151,
+      "assertions": [
+        {
+          "name": "Status Code",
+          "passed": true,
+          "expected": 200,
+          "actual": 200
+        },
+        {
+          "name": "Performance",
+          "passed": true,
+          "expected": "<= 2000ms",
+          "actual": "151ms"
+        },
+        {
+          "name": "Custom Validation",
+          "passed": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Handle Invalid Country Name",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/name/nonexistentcountry12345",
+      "method": "GET",
+      "statusCode": 404,
+      "responseTime": 256,
+      "assertions": [
+        {
+          "name": "Status Code",
+          "passed": true,
+          "expected": 404,
+          "actual": 404
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Get Countries by Region (Europe)",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/region/europe",
+      "method": "GET",
+      "statusCode": 200,
+      "responseTime": 733,
+      "assertions": [
+        {
+          "name": "Status Code",
+          "passed": true,
+          "expected": 200,
+          "actual": 200
+        },
+        {
+          "name": "Performance",
+          "passed": true,
+          "expected": "<= 2000ms",
+          "actual": "733ms"
+        },
+        {
+          "name": "Custom Validation",
+          "passed": true
+        }
+      ],
+      "error": null
+    },
+    {
+      "name": "Performance Test: https://restcountries.com/v3.1/all?fields=name,cca2",
+      "status": "PASS",
+      "url": "https://restcountries.com/v3.1/all?fields=name,cca2",
+      "method": "GET",
+      "statusCode": null,
+      "responseTime": null,
+      "assertions": [],
+      "error": null,
+      "performance": {
+        "iterations": 5,
+        "successCount": 5,
+        "averageTime": 223,
+        "minTime": 192,
+        "maxTime": 257,
+        "allTimes": [
+          196,
+          192,
+          223,
+          257,
+          248
+        ]
+      }
+    }
+  ]
+}
